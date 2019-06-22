@@ -66,7 +66,9 @@ const App = () => {(
     )
 )}
 
-//Case with a void second argument, which runs only when the argument changes and a return statement, that runs when the component will be unmounted, working as a function "componentDidUnmout", can say the function like that, works like a constructor and a destructor in the same statement (C++)
+//Case with a void second argument, which runs only when the argument changes and a return statement,
+//that runs when the component will be unmounted, working as a function "componentDidUnmout", can say the function like that,
+// works like a constructor and a destructor in the same statement (C++)
 const App = () => {(
     const [name, setName] = useState('')
     useEffect(() => {
@@ -108,7 +110,8 @@ const namesReducer = (state, action) => {
     }
 }
 
-//With the Context we create the Reducer for the App and making the new state available to all childrens components
+//With the Context we create the Reducer for the App and making the new state available to
+// all childrens components
 const App = () => {(
     const [names, dispatch] = useReducer(NamesReducer, [])
     return (
