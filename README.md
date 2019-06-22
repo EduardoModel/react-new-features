@@ -86,7 +86,7 @@ const App = () => {(
 )}
 ```
 
-##useReducer
+## useReducer
 The function useReducer allow us to have a reducer, just like Redux, but without the library itself. The functionality is the same, allowing us to access a state which is shared with all the child components of a specific component, making the rest of the components reusable and flexibles.
 The principle is simple: first, we create a context of a state we want to share. Second, we make a reducer, equal to the Redux. Then we need to wrap all the children's components who need to access the context with the Context.Provider tag. In the end, we only need to use the context created and utilize the dispatch function to manipulate the objects in the main state.
 ### Example
