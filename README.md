@@ -27,7 +27,8 @@ This function can also have similar functionality as the functions: componentDid
 
 ### Example
 ```javascript
-//Case without a second argument, that means the function always will run when the component suffers a change
+//Case without a second argument, that means the function always will run when the
+//component suffers a change
 const App = () => {(
     const [name, setName] = useState('')
     useEffect(() => {
@@ -67,8 +68,8 @@ const App = () => {(
 )}
 
 //Case with a void second argument, which runs only when the argument changes and a return statement,
-//that runs when the component will be unmounted, working as a function "componentDidUnmout", can say the function like that,
-// works like a constructor and a destructor in the same statement (C++)
+//that runs when the component will be unmounted, working as a function "componentDidUnmout", can say
+//the function like that, works like a constructor and a destructor in the same statement (C++)
 const App = () => {(
     const [name, setName] = useState('')
     useEffect(() => {
