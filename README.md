@@ -6,7 +6,7 @@ These new features allow you to have a state in a stateless component, making it
 
 # The new commands are: 
 ## useState
-This is a function which the argument is the type you want to create the state and the return is the state itself (can also call as a 'variable') and the setter function(or update function), which you call whenever you need to change the state.
+This is a function which the argument is the type do we want to create the state and the return is the state itself (can also call as a 'variable') and the setter function(or update function), which you call whenever you need to change the state.
 
 ### Example
 ```javascript
@@ -22,7 +22,7 @@ const App = () => {(
 )}
 ```
 ## useEffect
-This function is called whenever the component suffers a change, for example, when a button is pressed. These function takes a callback function as an argument and executes, as sayed before, every time the component re-renders. But you can add a second argument, which is the tracking state (variable) and only fires the function when these arguments change. 
+This function is called whenever the component suffers a change, for example, when a button is pressed. These function takes a callback function as an argument and executes, as sayed before, every time the component re-renders. But we can add a second argument, which is the tracking state (variable) and only fires the function when these arguments change. 
 
 This function can also have similar functionality as the functions: componentDidMount, componentDidUpdate, and componentDidUnmount.
 
@@ -171,5 +171,27 @@ const Component2 = () => {
 
         </div>
     )
+}
+```
+
+## Personalized Hooks
+We can also create our personalized Hooks, to serve a specific purpose and making it reusable in another's components. The principle is very simple, basically, we create a function which can or can't receive arguments and as a return, we receive the state itself and the setter function.
+
+```javascript
+const useClickCounter = () => {
+    const [clicks, setClicks] = useState(0)
+
+    const handleMouseClick = (e) => {
+        setClicks(clicks+1)
+    }
+
+    useEffect(() => {
+        document.addEventListener("click", handleMouseClick)
+        return () => {
+            document.removeEventListener("click", handleMouseClick)
+        }
+    }, [clicks])
+
+    return clicks
 }
 ```
